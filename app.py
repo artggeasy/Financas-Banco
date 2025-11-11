@@ -3,17 +3,13 @@ import sqlite3
 import hashlib
 from datetime import date
 
-# ======================================
-# Funções de banco de dados
-# ======================================
-
 def conectar():
     return sqlite3.connect("financeiro.db")
 
 def hash_senha(senha):
     return hashlib.sha256(senha.encode()).hexdigest()
 
-# ---------- Usuários ----------
+#Usuários
 def criar_usuario(nome, email, senha):
     conn = conectar()
     cur = conn.cursor()
@@ -35,7 +31,7 @@ def login(email, senha):
     conn.close()
     return user
 
-# ---------- Categorias ----------
+#Categorias
 def listar_categorias(id_usuario, tipo=None):
     conn = conectar()
     cur = conn.cursor()
@@ -58,7 +54,7 @@ def criar_categoria(id_usuario, nome, tipo):
     conn.close()
     st.success("✅ Categoria criada com sucesso!")
 
-# ---------- Transações ----------
+#Transações
 def adicionar_transacao(id_usuario, id_categoria, descricao, valor, tipo, data):
     conn = conectar()
     cur = conn.cursor()
@@ -84,10 +80,7 @@ def listar_transacoes(id_usuario):
     conn.close()
     return dados
 
-# ======================================
 # Interface Streamlit
-# ======================================
-
 st.set_page_config(page_title="💰 Controle Financeiro", layout="centered")
 st.title("💰 Sistema de Controle Financeiro Pessoal")
 
@@ -118,9 +111,8 @@ elif opcao == "Login":
         else:
             st.error("E-mail ou senha incorretos.")
 
-# ------------------------------
-# Se usuário logado
-# ------------------------------
+
+#usuário logado
 if "user" in st.session_state:
     user = st.session_state["user"]
     st.sidebar.write(f"👤 Logado como: {user['nome']}")
@@ -138,7 +130,7 @@ if "user" in st.session_state:
         if st.button("Adicionar categoria"):
             criar_categoria(user["id"], nome_cat, tipo_cat)
 
-    # ----- Transações -----
+    #Transações
     elif aba == "Transações":
         st.subheader("💸 Minhas Transações")
 
@@ -165,7 +157,7 @@ if "user" in st.session_state:
         else:
             st.warning("Crie uma categoria antes de lançar transações.")
 
-    # ----- Logout -----
+    #Sair
     elif aba == "Sair":
         st.session_state.pop("user", None)
         st.success("Logout realizado com sucesso!")
