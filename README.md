@@ -53,7 +53,8 @@ O projeto permite gerenciar receitas, despesas, categorias e visualizar um resum
 ## 📦 Instalação
 Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/artggeasy/Financas-Banco
+.git
 cd seu-repo
 
 Crie um ambiente virtual (opcional, mas recomendado):
