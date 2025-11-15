@@ -51,40 +51,26 @@ O projeto permite gerenciar receitas, despesas, categorias e visualizar um resum
 ---
 
 ## 📦 Instalação
-
 Clone este repositório:
-
 ```bash
 git clone https://github.com/seu-usuario/seu-repo.git
 cd seu-repo
+
 Crie um ambiente virtual (opcional, mas recomendado):
-
-bash
-Copy code
 python -m venv venv
-Ative o ambiente:
 
-Windows:
-bash
-Copy code
-venv\Scripts\activate
+Ative o ambiente:
+Windows:venv\Scripts\activate
 
 Instale as dependências:
-
-bash
-Copy code
 pip install -r requirements.txt
+
 ▶️ Execução
 Para iniciar o sistema, execute:
-
-bash
-Copy code
 streamlit run app.py
 O navegador abrirá automaticamente com a interface do sistema.
 
 🗄 Estrutura do Projeto
-bash
-Copy code
 📁 projeto-financeiro
 ├── app.py                # Código principal (Streamlit)
 ├── criar_bd.py           # Script para criação do banco de dados
