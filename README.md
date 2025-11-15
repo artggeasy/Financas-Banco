@@ -65,15 +65,10 @@ python -m venv venv
 Ative o ambiente:
 
 Windows:
-
 bash
 Copy code
 venv\Scripts\activate
-Linux / Mac:
 
-bash
-Copy code
-source venv/bin/activate
 Instale as dependências:
 
 bash
@@ -124,33 +119,11 @@ valor	REAL
 tipo	TEXT (Receita/Despesa)	
 data	DATE	
 
-📈 Melhorias Futuras (Roadmap)
- Filtros por mês e ano
-
- Edição de transações
-
- Exclusão de categorias e transações
-
- Dashboard avançado com múltiplos gráficos
-
- Exportação para Excel / PDF
-
- Tema dark personalizado
-
- Deploy no Streamlit Cloud
-
 🧑‍💻 Autor
 Arthur da Silva Araújo
 
-Projeto desenvolvido para aprendizado de:
-
-Python
-
-Streamlit
-
-Banco de dados SQLite
-
-Lógica financeira
+Projeto desenvolvido para aprendizado de: Python
+Streamlit, Banco de dados SQLite, Lógica financeira
 
 ⭐ Contribuições
 Sugestões e melhorias são sempre bem-vindas!
